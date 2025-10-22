@@ -1,0 +1,172 @@
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f5f5f5;
+  color: #333;
+}
+#map {
+  height: 100vh;
+  width: 100%;
+}
+
+.leaflet-control-attribution {
+    font-size: 0px;
+}
+/* Popup фото */
+.leaflet-popup-content img {
+  border-radius: 8px;
+  width: 150px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+
+/* Контейнер описаний */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #ffffff;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+  max-width: 1000px;
+  background: #f2f2f2;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  padding: 30px;
+  color: #848484;
+}
+
+/* 💎 Форма для заголовка */
+.title-box {
+  background-color: #ffffff;       /* белый фон */
+  border-radius: 25px;             /* скруглённые края */
+  padding: 20px 40px;              /* внутренние отступы */
+  margin-bottom: 30px;             /* расстояние до следующего блока */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* мягкая тень */
+  max-width: 900px;
+  width: 100%;
+  text-align: center;
+}
+
+.image-wrapper img {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.image-wrapper img {
+  max-width: 1060px;
+  width: 100%;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  margin-bottom: 30px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.description {
+  flex: 1;
+  min-width: 280px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 20px;
+  line-height: 1.6;
+}
+
+.description h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 240px;
+}
+
+.price {
+  background-color: #ffffff;
+  text-align: center;
+  padding: 15px;
+  border-radius: 16px;
+}
+
+.price h3 {
+  margin: 0 0 10px 0;
+}
+
+.price p {
+  color: #15803d;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.note {
+  position: relative;
+  background-color: #8ED72E;
+  text-align: center;
+  padding: 20px;
+  border-radius: 16px;
+  font-weight: 500;
+  padding-bottom: 40px;
+}
+
+.note img {
+  position: absolute;
+  bottom: -70px;
+  right: -30px;
+  width: 160px;
+  height: auto;
+  transform: rotate(-2deg);
+  z-index: 0;
+}
+
+.back-btn {
+      display: inline-block;
+      margin-top: 40px;
+      padding: 14px 28px;
+      background-color: #8ED72E;
+      color: #000000;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 30px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .back-btn:hover {
+      background-color: #7bc427;
+      transform: translateY(-2px);
+    }
+
+/* Адаптив */
+@media (max-width: 768px) {
+  p { font-size: 16px; line-height: 1.6; padding: 0 10px; }
+  .leaflet-popup-content img { width: 120px; }
+  a { padding: 10px 14px; font-size: 14px; }
+}
+
+@media (max-width: 480px) {
+  h1 { font-size: 20px; }
+  p { font-size: 14px; }
+}
+

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Интерактивная карта Пензенской области</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="map"></div>
+
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script>
+    // Создаём карту, центрируем на Пензу
+    const map = L.map('map', {
+      center: [53.2, 45.0],
+      zoom: 8,
+      minZoom: 9,
+      maxZoom: 15,
+      maxBounds: [
+        [52.4, 43.5], // юго-запад
+        [54.2, 46.5]  // северо-восток
+      ],
+      maxBoundsViscosity: 1.0 // ключевой параметр — не даёт уйти за границы
+    });
+
+    // Подложка карты
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap'
+    }).addTo(map);
+
+    // Список мест с ссылками на отдельные страницы
+    const places = [
+      { coords: [53.183830, 45.013528], title: "Спасский кафедральный собор", url: "place1.html", img: "images/sobor1.jpg" },
+      { coords: [52.992589, 43.674248], title: "Музей-заповедник Тарханы", url: "place2.html", img: "images/tarxany.jpg" },
+      { coords: [53.187440, 45.004392], title: "Ботанический сад имени И.И.Спрыгина", url: "place4.html", img: "images/botan.jpg" },
+      { coords: [53.175735, 45.002883], title: "Пензенский зоопарк", url: "place3.html", img: "images/zoo.jpg" },
+      { coords: [53.191532, 44.970966], title: "Смотровая площадка Ласточкины горы", url: "place5.html", img: "images/smotr.jpg" },
+      { coords: [53.185152, 44.999182], title: "Парк имени Белинского", url: "place6.html", img: "images/park.jpg" },
+      { coords: [53.198361, 45.019583], title: "Пензенский драматический театр имени А. В. Луначарского", url: "place7.html", img: "images/dram.jpg" },
+      { coords: [53.716070, 46.093838], title: "Никольский музей стекла и хрусталя", url: "place8.html", img: "images/steklo.jpg" },
+      { coords: [53.1945087, 45.0144786], title: "Дом-музей Всеволода Мейрхольда", url: "place9.html", img: "images/dom.jpg" },
+    ];
+
+    // Добавляем метки с переходом на страницы
+    places.forEach(place => {
+  L.marker(place.coords).addTo(map)
+    .bindPopup(`
+      <b>${place.title}</b><br>
+      <img src="${place.img}" alt="${place.title}" style="width:150px; margin-top:5px; border-radius:5px;"><br>
+      <a href="${place.url}">Подробнее</a>
+    `);
+});
+  </script>
+</body>
+</html>
